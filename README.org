@@ -1,7 +1,7 @@
 * Installation
 
 #+begin_src sh
-git clone https://github.com/andrewpeck/dotfiles ~/dotfiles 
+git clone --recurse-submodules https://github.com/andrewpeck/dotfiles ~/dotfiles
 mkdir  ~/.config/nixpkgs
 ln -s ~/dotfiles/home.nix ~/.config/nixpkgs/home.nix
 #+end_src sh
