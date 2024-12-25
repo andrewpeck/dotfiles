@@ -11,7 +11,7 @@ prog=$(ls -1 $(echo $PATH | tr ':' '\n' | exists) |
     grep -v ':' |
     sort -u |
     awk '{print $1}' |
-    fzfmenu)
+    fzf-menu)
 
 [ -z $prog ] && exit 1
 
