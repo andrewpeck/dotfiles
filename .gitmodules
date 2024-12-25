@@ -1,0 +1,6 @@
+[submodule "doom.d"]
+	path = doom.d
+	url = https://github.com/andrewpeck/doom.d
+[submodule "vim"]
+	path = vim
+	url = https://github.com/andrewpeck/vim

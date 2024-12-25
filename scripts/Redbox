@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+LINE=$(lsusb | grep Xilinx | tail -n 1)
+if [ "$LINE" = "" ]; then
+    echo "No redbox found.. uhoh"
+    return 1
+else
+    BUS=$(echo $LINE |  awk -F " |:" '{print $2}')
+    DEVICE=$(echo $LINE |  awk -F " |:" '{print $4}')
+    #PERMISSIONS=$(ls -l /dev/windrvr6 | awk -F " " '{print $1}')
+    if [ -w /dev/windrvr6 ]; then
+        echo "Permissions ok..."
+    else
+        sudo chmod 666 /dev/windrvr6
+    fi
+
+    CMD="fxload -v -t fx2 -I /usr/share/xusb_xp2.hex -D /dev/bus/usb/$BUS/$DEVICE"
+    eval "$CMD"
+    return 0
+fi

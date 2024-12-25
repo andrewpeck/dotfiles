@@ -1,0 +1,10 @@
+# -*- mode: mailcap -*-
+# ~/.mailcap
+text/html; lynx -dump '%s' | more; nametemplate=%s.html; copiousoutput;
+#text/html; w3m -T text/html
+text/plain; gvim -
+image/gif; gm display -
+image/jpg; gm display -
+image/eps; gm display -
+application/postscript; gm display -
+application/pdf; evince /dev/stdin

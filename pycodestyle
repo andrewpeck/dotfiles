@@ -1,0 +1,9 @@
+# -*- mode: conf -*-
+
+[pycodestyle]
+max-line-length = 120
+
+#[pylsp]
+## The python language server used by eglot also use this config
+## file. So for example you can add stuff like:
+#plugins.yapf.enabled: true

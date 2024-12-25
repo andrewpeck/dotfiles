@@ -1,0 +1,6 @@
+#!/bin/bash
+pandoc $1.org -o $1.md -t gfm
+while true; do
+    inotifywait -r -e modify,attrib,close_write,move,create,delete $1.org
+    pandoc $1.org -o $1.md -t gfm
+done

@@ -1,0 +1,2 @@
+#!/bin/bash
+termite --class "fzf-menu" -e fzf-menu for_window [class="^fzf-menu$"] floating enable

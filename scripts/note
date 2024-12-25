@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+sh ~/bin/org-capture-todo.sh note $1
+#sh ~/bin/org-capture-todo.sh note "$(xclip -selection clipboard)"

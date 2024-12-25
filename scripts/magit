@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+emacsclient -nc -a "emacs" --eval "(progn (setq skip-init t) (magit-status))"

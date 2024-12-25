@@ -1,0 +1,122 @@
+# Get a key combination with:
+# xbindkeys --multikey
+
+"xcalib -alter -invert"
+    Control+Alt+i
+
+"restart_skype"
+    Control+Alt+k
+
+"slack --disable-gpu"
+    Control+Shift+s
+"skypeforlinux --disable-gpu"
+    Control+Shift+y
+
+"mpc toggle"
+    Control+Alt+p
+"mpc next"
+    Control+Alt+bracketright
+"mpc prev"
+    Control+Alt+bracketleft
+
+#"spectacle -bcr"
+"mate-screenshot -a -c"
+    m:0x0 + c:107
+
+#"mate-screenshot -a -c"
+    #m:0x0 + c:107
+#
+# #"xfce4-screenshooter -r -c"
+# #    Print
+#
+
+#altm
+"xrandr --output DisplayPort-0 --right-of HDMI-A-O  --output DisplayPort-1 --right-of HDMI-A-0 --primary --output HDMI-A-0 --preferred --output eDP --off"
+    m:0x40 + c:133
+
+"konsole -e julia"
+   XF86Calculator
+
+"caja ~/"
+   Mod4+E
+
+"fzf-files-popup"
+   Control+Shift+o
+
+"mate-terminal"
+   Mod4+T
+#
+# #"xscreensaver-command --lock"
+# #    Control+Alt+l
+# #
+# #"~/.config/dmenu/dmenu-bind.sh"
+# #   Control+Alt+r
+
+
+
+
+# #xbindkeys -mk
+# "xcalib -alter -invert"
+#     Control+Alt+i
+# "mpc toggle"
+# 	Control+Alt+p
+# "mpc next"
+# 	Control+Alt+bracketright
+# "mpc prev"
+# 	Control+Alt+bracketleft
+# "$BROWSER"
+# 	Control+Alt + w
+# "$FILEMANAGER"
+# 	Control+Alt + f
+# "xfce4-screenshooter"
+# 	m:0x0 + c:107
+# "xscreensaver-command --lock"
+#     Control+Alt+l
+
+
+# #"leafpad"
+# #    m:0x40 + c:26
+# #"lilyterm -s"
+# #	Control+Alt + t
+# #"( xsel | xsel -b )"
+# #    Alt + c
+# #"brightness down"
+# #	m:0x0 + c:120
+# #"brightness up"
+# #	m:0x0 + c:126
+# "amixer -D pulse sset Master toggle"
+# 	XF86AudioMute
+# "amixer -D pulse sset Master 10%+"
+# 	XF86AudioRaiseVolume
+# "amixer -D pulse sset Master 10%-"
+# 	XF86AudioLowerVolume
+# #"~/.config/dmenu/dmenu-bind.sh"
+# #	Control+Alt+r
+# #
+# # Examples of commands:
+# #"xbindkeys_show"
+# #  control+shift + q
+# # set directly keycode (here control + f with my keyboard)
+# #"xterm"
+# #  c:41 + m:0x4
+# # specify a mouse button
+# #"xterm"
+# #  control + b:2
+
+# #"xterm -geom 50x20+20+20"
+# #   Shift+Mod2+Alt + s
+# #
+# ## set directly keycode (here control+Alt+mod2 + f with my keyboard)
+# #"xterm"
+# #  Alt + c:0x29 + m:4 + mod2
+# #
+# ## Control+Shift+a  release event starts rxvt
+# #"rxvt"
+# #  release+control+shift + a
+
+# ## Control + mouse button 2 release event starts rxvt
+# #"rxvt"
+# #  Control + b:2 + Release
+# ##################################
+# # End of xbindkeys configuration #
+# ##################################

@@ -1,0 +1,2 @@
+#!/bin/bash
+alacritty --class "fzf-files" -e "fzf-files"

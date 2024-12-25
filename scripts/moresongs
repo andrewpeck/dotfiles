@@ -1,0 +1,2 @@
+#!/bin/bash
+mpc search artist "$(mpc -f %artist% | head -n 1)" | sort -R | head -n 5 | mpc add

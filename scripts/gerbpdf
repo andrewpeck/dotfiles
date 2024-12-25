@@ -1,0 +1,16 @@
+#!/bin/bash
+
+files=""
+
+for var in "$@"
+do
+    gerbv --export=pdf "$var" -o "$var.pdf"
+    files="$files $var.pdf"
+done
+
+pdfunite $files output.pdf
+
+for var in "$@"
+do
+    rm "$var.pdf"
+done

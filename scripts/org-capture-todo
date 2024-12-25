@@ -1,0 +1,103 @@
+#!/usr/bin/env sh
+:; ( echo "$EMACS" | grep -q "term" ) && EMACS=emacs || EMACS=${EMACS:-emacs} # -*-emacs-lisp-*-
+:; command -v $EMACS >/dev/null || { >&2 echo "Can't find emacs in your PATH"; exit 1; }
+:; exec emacs -q --no-site-file --batch --load "$0" -- "$@"
+:; exit 0
+;; -*- lexical-binding: t -*-
+
+;;; Code:
+
+
+(shell-command (format "echo \"%s\" >> ~/work/todo/log.txt" command-line-args))
+
+(let ((prefix (if (file-exists-p "~/.emacs.d")
+                  "~/.emacs.d/.local/straight/repos/"
+                "~/.config/emacs/.local/straight/repos/")))
+
+  (add-to-list 'load-path (expand-file-name (concat prefix "compat")))
+  (add-to-list 'load-path (expand-file-name (concat prefix "plz")))
+  (add-to-list 'load-path (expand-file-name (concat prefix "dash.el")))
+  (add-to-list 'load-path (expand-file-name (concat prefix "org-web-tools")))
+  (add-to-list 'load-path (expand-file-name (concat prefix "esxml")))
+  (add-to-list 'load-path (expand-file-name (concat prefix "s.el"))))
+
+;; (require 'dash)
+(require 'org-web-tools)
+
+(require 'org-capture)
+(require 'org-protocol)
+(require 'url)
+
+(defun org-web-tools--html-title (html)
+  "Return title of HTML page, or nil if it has none.
+Uses the `dom' library."
+  ;; Based on `eww-readable'
+  (let* ((dom (with-temp-buffer
+                (insert html)
+                (libxml-parse-html-region (point-min) (point-max))))
+         (title (cl-caddr (car (dom-by-tag dom 'title)))))
+    (when title
+      (org-web-tools--cleanup-title title))))
+
+(defun www-get-page-title (url)
+  "Gets the title of a webpage at URL"
+  (org-web-tools--html-title (org-web-tools--get-url url)))
+
+(defun string-in (string-to-search terms)
+  (cl-some (lambda (x) (cl-search x string-to-search)) terms))
+
+(defun org--capture-url-to-file (type body note)
+
+  (let* ((prefix (pcase type
+                   ("todo" "** TODO ")
+                   ("note" "** ")))
+
+         (www-title
+          (when (string= type "note")
+            (with-demoted-errors (www-get-page-title body))))
+
+         ;; if the text is a url, retrieve the page at the URL and get its title
+         (title (if www-title (concat www-title "\n- " body) body))
+
+         ;; (title-downcase (when title (downcase title)))
+
+         (heading (pcase type
+                    ("todo" "To do")
+                    ("note"
+                     (cond
+                      ;; ((string-in title-downcase '("lisp")) "Lisp")
+                      ;; ((string-in title-downcase '("diode" "capacitor" "altium" "orcad")) "Electronics")
+                      ;; ((string-in title-downcase '("fpga" "verilog" "vhdl" "xilinx" "axi")) "FPGA")
+                      ;; ((string-in title-downcase '("git")) "Git")
+                      ;; ((string-in title-downcase '("racket" "rust" "erlang" "python")) "Programming")
+                      ;; ((string-in title-downcase '("emacs" "org mode")) "Emacs")
+                      ;; ((string-in title-downcase '("android" "ssh")) "Technology")
+                      (t "Saved")))))
+
+         (dest (pcase type
+                 ("todo" "~/work/todo/todo.org")
+                 ("note" "~/work/notes/inbox.org")))
+
+         (bullets (apply #'concat
+                         (when rest
+                           (mapcar
+                            (lambda (x) (format "\n- %s" x)) rest)))))
+
+    (let ((org-capture-templates
+           `(("template-x" "capture-clipboard" entry
+              (file+headline ,dest ,heading)
+              ,(concat prefix title bullets
+                       "\nDEADLINE: %(org-insert-time-stamp (org-read-date nil t \".\"))")
+              :immediate-finish t
+              :unnarrowed t))))
+
+      (org-protocol-capture (list :template "template-x")))))
+
+(let ((type (nth 4 command-line-args))
+      (body (nth 5 command-line-args))
+      (note (cdr (cdr (cddddr command-line-args)))))
+  (org--capture-url-to-file type body note))
+
+;; always kill emacs now; otherwise it will try loading the command line
+;; arguments as files
+;; (kill-emacs)

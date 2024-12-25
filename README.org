@@ -1,0 +1,15 @@
+* Installation
+
+#+begin_src sh
+git clone https://github.com/andrewpeck/dotfiles ~/dotfiles 
+mkdir  ~/.config/nixpkgs
+ln -s ~/dotfiles/home.nix ~/.config/nixpkgs/home.nix
+#+end_src sh
+
+#+begin_src sh
+curl -L https://nixos.org/nix/install | sh
+nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+nix-channel --update
+nix-shell '<home-manager>' -A install
+home-manager switch
+#+end_src sh

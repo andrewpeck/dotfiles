@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+input=""
+
+if [[ -p /dev/stdin ]]; then
+  input="$(cat -)"
+else
+  input="${*}"
+fi
+
+if [[ -z "${input}" ]]; then
+  return 1
+fi
+
+echo "${input}"
+
+curl -s \
+  --form-string "token=anr2g27x5fp9y4bzo5tqhrn6zh5j3a" \
+  --form-string "user=urj8c5g3584ecqmduunv3ry26gfhmq" \
+  --form-string "message=${input}" \
+  https://api.pushover.net/1/messages.json
+
+

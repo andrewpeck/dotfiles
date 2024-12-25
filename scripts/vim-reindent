@@ -1,0 +1,2 @@
+#!/bin/bash
+ vim --clean -c 'set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab' -c 'normal gg=G' -c 'wq' "$1"

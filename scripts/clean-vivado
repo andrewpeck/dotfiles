@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+cd ~/
+
+echo "Removing Vivado temp files"
+
+fd 'vivado_pid[0-9]*.str' | xargs rm
+
+find ~/ \( -name "work-obj08.cf" \
+    -o -name "vivado_pid[0-9]*.str" \
+    -o -name "xvhdl.pb" -o -name "xvhdl.log" \
+    -o -name "planAhead.ngc2edif.log"  \
+    -o -name "vivado.jou" \
+    -o -name "vivado.log" \
+    -o -name "vivado_[0-9]*.backup.log" \
+    -o -name "vivado_[0-9]*.backup.jou"  \
+    -o -name "webtalk_[0-9]*.backup.log"  \
+    -o -name "webtalk_[0-9]*.backup.jou"  \
+    -o -name "usage_statistics_webtalk.*" \
+    -o -name "planAhead.jou" \
+    -o -name "vivado.log" \
+    -o -name "vivado_[0-9]*.backup.log" \
+    -o -name "vivado_[0-9]*.backup.jou" \) -delete -exec echo {} \;
+
+echo "Removing .Xil " && time fd -IH --type directory "\.Xil$"  | xargs rm -r
+echo "Removing __pycache__" && time fd -HIF --type directory __pycache__ | xargs rm -r
+echo "Removing xsim.dir" && time fd -HIF --type directory xsim\.dir | xargs rm -r
+echo "Removing .pyc files" && fd -IH '.*.pyc$' | xargs rm -r
+echo "Removing git repos from emacs-backups" && find ~/emacs-backups/ -name \.git -type d -exec rm -r {} \;
+
+#echo "F" && find ~/work -name sim_build -type d -print0 | xargs -0 rm -r
+#find ~/work -type d -name SimulationLib -exec rm -r {} \;
+#find ~/work -wholename *work/_lib.qdb -print0 | xargs -0 dirname | xargs rm -r

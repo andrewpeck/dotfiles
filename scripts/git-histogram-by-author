@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+git log --first-parent --pretty=format:"%aN" | rare histogram -a

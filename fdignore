@@ -1,0 +1,38 @@
+# -*- mode: gitignore -*-
+
+node_modules
+.cache
+SoftMaker
+**.o
+/mirrors
+/root
+/gems
+/Downloads/sigasi
+/pycharm*
+/software
+
+**/target/debug/**
+
+# Altium
+**/altium/History/**
+__Previews
+
+# questa
+_info
+_lib.qdb
+_vmake
+
+# 0xbefe
+**python-prompt-toolkit**
+
+# emacs
+emacs-backups
+
+# gaps petalinux files
+MA-ZX*-*-*-D*
+
+# allegro
+*.jrl,*
+*.cfg,*
+signoise.run
+signoise.log*

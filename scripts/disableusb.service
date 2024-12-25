@@ -1,0 +1,8 @@
+[Unit]
+Description=Disable Broken USB Service
+
+[Service]
+ExecStart=/home/apeck/Sync/dotfiles/Scripts/disableusb.sh
+
+[Install]
+WantedBy=basic.target

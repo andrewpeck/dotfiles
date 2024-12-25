@@ -1,0 +1,6 @@
+#!/bin/bash
+while true; do
+    inotifywait -r -e modify,attrib,close_write,move,create,delete $1.md
+    pandoc -f gfm $1.md -o $1.pdf
+done
+

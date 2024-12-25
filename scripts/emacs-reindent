@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+emacs -batch -Q "$1" --eval '(progn (setq tab-width 2) (setq indent-tabs-mode nil) (indent-region (point-min) (point-max) nil) (save-buffer))'

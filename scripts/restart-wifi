@@ -1,0 +1,9 @@
+#!/bin/bash
+interface="wlp0s20f0u1u1"
+wlan=$(/sbin/ifconfig $interface | grep "inet " -c)
+if [ "$wlan" -eq 0 ]; then
+    echo "interface $interface is down"
+    nmcli connection up id  SETUP-2B44
+else
+    echo "interface is up"
+fi
