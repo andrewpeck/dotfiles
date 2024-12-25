@@ -1,0 +1,55 @@
+source ~/.mutt/mutt-solarized.muttrc
+source ~/.mutt/bindings.muttrc
+
+set mail_check_stats
+
+set mbox_type = Maildir
+set folder = "~/mail/fastmail"
+
+# mailbox settings
+set spoolfile = +INBOX
+set postponed = +Drafts
+set record = +Sent
+set trash = +Trash
+
+# https://wiki.archlinux.org/title/Mutt#Viewing_HTML
+auto_view text/html
+set my_mail=~/.mutt/mail.html
+macro pager,attach V \
+"<enter-command>unset wait_key<enter>\
+<shell-escape>mkdir -p $(dirname $my_mail)<enter>\
+<pipe-entry>iconv -c --to-code=UTF8 > \
+$my_mail<enter><shell-escape>$BROWSER $my_mail &<enter>" \
+"Open attachment with $BROWSER"
+
+# Setup
+
+set realname = "Andrew Peck"         # who am i?
+set envelope_from                    # which from?
+set sig_dashes                       # dashes before sig
+set edit_headers                     # show headers when composing
+set fast_reply                       # skip to compose when replying
+set askcc                            # ask for CC:
+set fcc_attach                       # save attachments with the body
+unset mime_forward                   # forward attachments as part of body
+set forward_format = "Fwd: %s"       # format of subject when forwarding
+set forward_decode                   # decode when forwarding
+set attribution = "On %d, %n wrote:" # format of quoting header
+set reply_to                         # reply to Reply to: field
+set reverse_name                     # reply as whomever it was to
+set include                          # include message in replies
+set forward_quote                    # include message in forwards
+
+
+# Remote Gmail folders
+# set folder = "imaps://imap.gmail.com/"
+# set spoolfile = "+INBOX"
+# set postponed = "+[Gmail]/Drafts"
+# set record = "+[Gmail]/Sent Mail"
+# set trash = "+[Gmail]/Trash"
+
+
+# composing will go directly to the message editor without prompting for recipient or subject.
+set autoedit=yes
+
+set use_threads=threads sort=reverse-last-date sort_aux=reverse-last-date

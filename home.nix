@@ -29,6 +29,7 @@
     pkgs.xbindkeys
     pkgs.fzf
     pkgs.rare-regex
+    pkgs.isync
     pkgs.youplot
     pkgs.jq
     pkgs.yq
@@ -86,8 +87,8 @@
 
     #mutt
     ".mailcap".source = ~/dotfiles/mailcap;
-    ".mbsyncrc".source = ~/dotfiles/mbsyncrc;
     ".mutt".source = ~/dotfiles/mutt;
+    ".mbsyncrc".source = ~/dotfiles/mbsyncrc;
 
     #python
     ".config/pycodestyle".source = ~/dotfiles/pycodestyle;
