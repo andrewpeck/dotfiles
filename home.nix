@@ -4,10 +4,10 @@
   home.username = "apeck";
   home.homeDirectory = "/home/apeck";
 
+  home.extraOutputsToInstall = [ "dev" "lib" ];
+
   # You should not change this value
   home.stateVersion = "24.11"; # Please read the comment before changing.
-
-  services.emacs.enable = true;
 
   # Packages
   home.packages = [
@@ -21,6 +21,9 @@
     pkgs.xorg.xwininfo # emacs everywhere
     pkgs.xdotool # emacs everywhere
     #utils
+    pkgs.gcc
+    pkgs.glibc
+    pkgs.zlib
     pkgs.borgbackup
     pkgs.borgmatic
     pkgs.restic
@@ -125,7 +128,11 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  #-------------------------------------------------------------------------------
   # systemd services
+  #-------------------------------------------------------------------------------
+  services.emacs.enable = true;
+
   systemd.user.services.xbindkeys = {
     Unit = {Description = "xbindkeys";};
     Install = {WantedBy = [ "default.target" ];};
