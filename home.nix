@@ -68,7 +68,7 @@
     pkgs.isort
     # hdl
     pkgs.verilator
-    pkgs.ghdl-gcc
+    pkgs.ghdl-llvm
     pkgs.gtkwave
     # tex
     pkgs.texlivePackages.digestif
