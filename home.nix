@@ -66,6 +66,7 @@
     pkgs.python312Packages.pyflakes
     pkgs.python312Packages.pyment
     pkgs.python312Packages.pytest
+    pkgs.python312Packages.jupytext
     pkgs.pylint
     pkgs.pyright
     pkgs.mypy
