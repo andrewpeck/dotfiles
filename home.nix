@@ -17,6 +17,7 @@
     pkgs.nil
     #emacs
     pkgs.emacs30
+    pkgs.emacs-lsp-booster
     pkgs.tree-sitter
     pkgs.xclip # org download
     pkgs.xorg.xwininfo # emacs everywhere
