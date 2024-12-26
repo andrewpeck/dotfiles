@@ -78,6 +78,9 @@
   # plain files is through 'home.file'.
   home.file = {
 
+    ".config/git/ignore".source = ~/dotfiles/gitignore;
+    ".git-config".source = ~/dotfiles/gitconfig;
+
     # tools
     ".vimrc".source = ~/dotfiles/vim/vimrc;
     ".aspell.en.pws".source = ~/dotfiles/aspell.en.pws;

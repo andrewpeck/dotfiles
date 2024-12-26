@@ -1,0 +1,9 @@
+[user]
+name = Andrew Peck
+[credential]
+helper = store
+[core]
+editor = vim
+excludesfile = ~/.config/git/ignore
+[rebase]
+autoStash = true
