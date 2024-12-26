@@ -100,6 +100,7 @@
     #python
     ".config/pycodestyle".source = ~/dotfiles/pycodestyle;
     ".pylintrc".source = ~/dotfiles/pylintrc;
+    ".flake8rc".source = ~/dotfiles/flake8rc;
 
     # x/shell
     ".config/fish".source = ~/dotfiles/fish;
