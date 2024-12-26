@@ -1,5 +1,6 @@
 [user]
 name = Andrew Peck
+useConfigOnly = true
 [credential]
 helper = store
 [core]
