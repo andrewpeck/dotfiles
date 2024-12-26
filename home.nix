@@ -68,6 +68,7 @@
     pkgs.python312Packages.pytest
     pkgs.pylint
     pkgs.pyright
+    pkgs.mypy
     pkgs.ruff
     pkgs.python312Packages.autopep8
     pkgs.isort
