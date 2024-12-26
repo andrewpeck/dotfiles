@@ -95,6 +95,7 @@
     ".screenrc".source = ~/dotfiles/screenrc;
     ".tmux.conf".source = ~/dotfiles/tmux.conf;
     ".proselintrc".source = ~/dotfiles/proselintrc;
+    ".config/solaar/config.yaml".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/solaar-config.yaml;
     ".local/share/applications/org-protocol.desktop".source = ~/dotfiles/org-protocol.desktop;
 
     #mutt
