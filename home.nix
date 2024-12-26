@@ -14,6 +14,7 @@
     # nix
     pkgs.nix-search-cli
     pkgs.nixfmt-classic
+    pkgs.nil
     #emacs
     pkgs.emacs30
     pkgs.tree-sitter
