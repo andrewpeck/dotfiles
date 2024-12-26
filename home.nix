@@ -104,6 +104,7 @@
     ".config/xournalpp/settings.xml".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/xournal-settings.xml;
     ".config/spectaclerc".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/spectaclerc;
     ".config/dolphinrc".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/dolphinrc;
+    ".local/share/konsole".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/konsole;
 
     #mutt
     ".mailcap".source = ~/dotfiles/mailcap;
