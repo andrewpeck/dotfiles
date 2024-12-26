@@ -50,6 +50,9 @@
     pkgs.pandoc
     pkgs.grip
     pkgs.rlwrap
+    #tcl
+    pkgs.nagelfar
+    pkgs.tcl
     #c/c++
     pkgs.bear
     pkgs.ccls
