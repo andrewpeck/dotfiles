@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+perl -le'
+    printf "%s is mode %o\n", $_, 07777 & (stat)[2]
+        for @ARGV
+        ' ./*

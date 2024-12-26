@@ -5,9 +5,6 @@
 
 [[ $TERM == "dumb" ]] && PS1='$ ' && return
 
-export EDITOR=vim
-export XAUTHORITY=~/.Xauthority
-
 # https://github.com/wofr06/lesspipe
 export LESSOPEN="|/usr/bin/lesspipe.sh %s"
 
@@ -20,6 +17,8 @@ case ${TERM} in
       PROMPT_COMMAND='echo -ne "\033_${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/\~}\033\\"'
       ;;
 esac
+
+source "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
 
 [ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
 
@@ -134,10 +133,6 @@ function add_to_path {
     fi
 }
 
-if [ -d "/usr/local/lib/python3.6/dist-packages/uhal" ] ; then
-    PYTHONPATH="/usr/local/lib/python3.6/dist-packages/uhal:$PYTHONPATH"
-fi
-
 #########################################################################################
 # fzf
 #########################################################################################
@@ -167,21 +162,6 @@ function fcd() {
 # Functions
 #########################################################################################
 
-
-function flac2mp3() {
-}
-
-function showmod() {
-    perl -le'
-        printf "%s is mode %o\n", $_, 07777 & (stat)[2]
-            for @ARGV
-            ' *
-}
-
-# git blameall
-function blameall() {
-}
-
 function say() {
     if [[ "${1}" =~ -[a-z]{2} ]]; then
         local lang=${1#-};
@@ -199,29 +179,6 @@ function swap_usage() {
 
 function ztar () {
   tar acvf "$1.tar.zst" "$1"
-}
-
-function extract (){
-    if [ -f "$1" ] ; then
-        case $1 in
-          *.tar.gz)   tar xzf    "$1" ;;
-          *.tar.bz2)  tar xjf    "$1" ;;
-          *.tar.zst)  tar xaf    "$1" ;;
-          *.7z)       7zip x     "$1" ;;
-          *.gz)       gzip       "$1" ;;
-          *.rar)      unrar x    "$1" ;;
-          *.tar)      tar xf     "$1" ;;
-          *.bz2)      bunzip2    "$1" ;;
-          *.tbz2)     tar xjf    "$1" ;;
-          *.tgz)      tar xzf    "$1" ;;
-          *.xz)       tar xvf    "$1" ;;
-          *.Z)        uncompress "$1" ;;
-          *.zip)      unzip      "$1" ;;
-          *)          echo       "'$1' cannot be extracted via extract()" ;;
-        esac
-    else
-        echo "'$1' is not a valid file"
-    fi
 }
 
 beautify() {
