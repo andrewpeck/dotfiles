@@ -5,10 +5,10 @@
 :; exit 0
 ;; -*- lexical-binding: t -*-
 
-(when (not (equal "~/emacs-backups"
-                  (string-trim (abbreviate-file-name
-                                (shell-command-to-string "pwd")))))
-  (error "Not in the emacs backup dir!"))
+(unless (file-exists-p "~/emacs-backups")
+  (error "~/emacs-backups not found!"))
+
+(cd "~/emacs-backups")
 
 (defvar match-re
   (rx (seq (submatch (* nonl))
