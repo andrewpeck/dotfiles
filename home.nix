@@ -33,6 +33,7 @@
     pkgs.youplot
     pkgs.jq
     pkgs.yq
+    pkgs.lesspipe
     pkgs.tmux
     pkgs.fd
     pkgs.silver-searcher
@@ -116,7 +117,10 @@
   home.sessionVariables = {
     BROWSER = "firefox";
     EDITOR = "vim";
+    LESSOPEN = "|${pkgs.lesspipe}/bin/lesspipe.sh %s";
   };
+
+  programs.lesspipe.enable = true;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

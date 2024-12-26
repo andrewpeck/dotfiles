@@ -27,4 +27,8 @@ alias git_undo_unstaged_whitespace='git diff -U0 -w --no-color | git apply --cac
 
 fish_add_path ~/dotfiles/scripts
 
+source ~/.nix-profile/etc/profile.d/nix.fish
+
+setenv BROWSER firefox
 setenv EDITOR vim
+setenv LESSOPEN "|lesspipe.sh %s" # https://github.com/wofr06/lesspipe
