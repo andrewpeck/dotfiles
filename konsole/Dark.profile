@@ -1,6 +1,6 @@
 [Appearance]
-ColorScheme=Monokai
-Font=Hack,9,-1,7,50,0,0,0,0,0
+ColorScheme=DarkPastels
+Font=Hack,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 
 [General]
 Name=Dark
