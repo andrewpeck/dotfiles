@@ -1,5 +1,8 @@
 # -*- mode: gitignore -*-
 
+emacs-backups
+
+Downloads
 node_modules
 .cache
 SoftMaker
@@ -7,7 +10,6 @@ SoftMaker
 /mirrors
 /root
 /gems
-/Downloads/sigasi
 /pycharm*
 /software
 
@@ -36,3 +38,10 @@ MA-ZX*-*-*-D*
 *.cfg,*
 signoise.run
 signoise.log*
+
+# yosys, verilator
+Surelog
+slpp_all
+*/sim_build/*
+sim_build
+
