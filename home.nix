@@ -95,8 +95,13 @@
     ".screenrc".source = ~/dotfiles/screenrc;
     ".tmux.conf".source = ~/dotfiles/tmux.conf;
     ".proselintrc".source = ~/dotfiles/proselintrc;
-    ".config/solaar/config.yaml".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/solaar-config.yaml;
     ".local/share/applications/org-protocol.desktop".source = ~/dotfiles/org-protocol.desktop;
+
+    #mutable configs
+    ".config/solaar/config.yaml".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/solaar-config.yaml;
+    ".config/xournalpp/settings.xml".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/xournal-settings.xml;
+    ".config/spectaclerc".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/spectaclerc;
+    ".config/dolphinrc".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/dolphinrc;
 
     #mutt
     ".mailcap".source = ~/dotfiles/mailcap;

@@ -1,0 +1,18 @@
+[ContentDisplay]
+UsePermissionsFormat=CombinedFormat
+
+[General]
+RememberOpenedTabs=false
+Version=202
+ViewPropsTimestamp=2024,9,23,11,18,44.277
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
+
+[MainWindow]
+MenuBar=Disabled
+ToolBarsMovable=Disabled
+
+[PreviewSettings]
+Plugins=com,audiothumbnail,avif,blenderthumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,fontthumbnail,imagethumbnail,jpegthumbnail,jxl,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,mobithumbnail,opendocumentthumbnail,gsthumbnail,rawthumbnail,svgthumbnail,gdk-pixbuf-thumbnailer,ffmpegthumbs,gdk-pixbuf-modules-extra-thumbnailer
