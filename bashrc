@@ -232,3 +232,5 @@ function killmyfirefox() {
 
 # expand all tabs for cpp files
 #find . -name '*.cpp' -type f -exec bash -c 'expand -t 4 "$0" | sponge "$0"' {} \;
+
+export HOG_NOTIFY=1
