@@ -3,7 +3,6 @@
 # #mailboxes =INBOX =[Gmail]/All%20Mail =[Gmail]/Sent =[Gmail]/Drafts
 
 # # https://www.rosipov.com/blog/elegant-mutt-setup-for-use-with-gmail/
-# bind index,pager g noop
 # macro index ga "<change-folder>=[Gmail]/All%20Mail<enter>" "Go to all mail"
 # macro index gd "<change-folder>=[Gmail]/Drafts<enter>" "Go to drafts"
 # macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
@@ -19,8 +18,6 @@
 # macro index,pager A ":set auto-tag=yes\n<save-message>=[Gmail]/All%20Mail<enter><enter><sync-mailbox>y" "Archive"
 # #macro index,pager A "<save-message>=[Gmail]/All%20Mail<enter><enter>:set confirmappend=no\n<sync-mailbox>:set confirmappend=yes\n" "Archive"
 
-set tmpdir = ~/.mutt/drafts
-
 # Keybindings and macros {{{1
 # ---------------------------
 
@@ -31,36 +28,58 @@ set tmpdir = ~/.mutt/drafts
 # pager   - where the contents of the message are displayed
 # query   - menu displaying results of query command
 
+#-------------------------------------------------------------------------------
+# Common Bindings
+#-------------------------------------------------------------------------------
+
+bind index,pager D noop
+bind index,pager <Space> noop
+bind index,pager d noop
+bind index,pager g noop
+
+bind index,pager gg top
+bind index,pager G  bottom
+
+# trash folder
+unset confirmappend
+folder-hook . 'macro index,pager D "<save-message>$trash<enter>"'
+folder-hook =Trash 'macro index D <delete-message>'
+
+#-------------------------------------------------------------------------------
+# Index Bindings
+#-------------------------------------------------------------------------------
+
 # Unbind some defaults.
 bind index <esc>V noop
 bind index <esc>v noop
+bind index <Space> noop
 bind index \Cn noop
 bind index \Cp noop
 bind index a noop
-bind pager <Space> noop
-bind index <Space> noop
-bind index <Space> noop
-bind index <Space> noop
+bind index g noop
+bind index d noop
+bind index,pager \# noop
 
-# apply mutt commands by default to all selected (tagged) messages without using tag-prefix
+bind index k previous-entry
+bind index j next-entry
+
 set auto_tag = yes
-bind index x tag-entry
+bind index x tag-entry # apply mutt commands by default to all selected (tagged) messages without using tag-prefix
+
+#-------------------------------------------------------------------------------
+# Pager Bindings
+#-------------------------------------------------------------------------------
 
 # paging bindings
 bind pager k  previous-line
 bind pager j  next-line
 bind pager <up> previous-line #scroll inside the message rather than the index
 bind pager <down> next-line
-bind pager g noop
-bind index g noop
-bind pager gg top
-bind pager G  bottom
 set pager_stop = yes # prevent Page Down from going to the next email
 
 bind index,pager R group-reply
 bind index,pager  recall-message
 
-bind index <Space> noop
 #bind index,pager <Space>hk what-key
 
 # View attachments properly.
@@ -98,12 +117,12 @@ bind editor <down> history-down
 
 # Convenient macros to switch between common folders.  Also tells me what other
 # folders have new mail once I make a switch.
-macro index,pager ,d "<change-folder>$postponed<enter><buffy-list>" "open drafts"
-macro index,pager ,i "<change-folder>$spoolfile<enter><buffy-list>" "open inbox"
-macro index,pager ,j "<change-folder>+spam<enter><buffy-list>"      "open junk mail (spam)"
-macro index,pager ,r "<change-folder>^<enter><buffy-list>"          "refresh folder"
-macro index,pager ,s "<change-folder>$record<enter><buffy-list>"    "open sent mail"
-macro index,pager ,t "<change-folder>$trash<enter><buffy-list>"     "open trash"
+# macro index,pager ,d "<change-folder>$postponed<enter><buffy-list>" "open drafts"
+# macro index,pager ,i "<change-folder>$spoolfile<enter><buffy-list>" "open inbox"
+# macro index,pager ,j "<change-folder>+spam<enter><buffy-list>"      "open junk mail (spam)"
+# macro index,pager ,r "<change-folder>^<enter><buffy-list>"          "refresh folder"
+# macro index,pager ,s "<change-folder>$record<enter><buffy-list>"    "open sent mail"
+# macro index,pager ,t "<change-folder>$trash<enter><buffy-list>"     "open trash"
 
 # I use this whenever I know that a folder hook is acting and I just want the
 # message to go to the default save folder.
@@ -119,7 +138,7 @@ macro index \'u  "<limit>!~Q<enter>"      "limit to unreplied messages"
 macro index \'\' "<limit>~A<enter>"       "reset all limits"
 
 # If +spam doesn't exist, mutt will create it for us.
-macro index S "<save-message>+spam<enter>" "mark message as spam"
+# macro index S "<save-message>+spam<enter>" "mark message as spam"
 
 # Toggle the mailbox list with "y".
 #macro index,pager y "<change-folder>?<toggle-mailboxes>" "show incoming mailboxes list"

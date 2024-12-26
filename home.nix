@@ -37,6 +37,7 @@
     pkgs.fd
     pkgs.silver-searcher
     pkgs.bat
+    pkgs.lynx
     pkgs.ripgrep
     pkgs.neomutt
     pkgs.gnuplot

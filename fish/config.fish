@@ -26,3 +26,5 @@ alias files='find . -type f | cut -d/ -f2 | sort | uniq -c | sort -h'
 alias git_undo_unstaged_whitespace='git diff -U0 -w --no-color | git apply --cached --ignore-whitespace --unidiff-zero -'
 
 fish_add_path ~/dotfiles/scripts
+
+setenv EDITOR vim

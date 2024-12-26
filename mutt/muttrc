@@ -12,9 +12,11 @@ set postponed = +Drafts
 set record = +Sent
 set trash = +Trash
 
+set tmpdir = ~/.mutt-tmp
+
 # https://wiki.archlinux.org/title/Mutt#Viewing_HTML
 auto_view text/html
-set my_mail=~/.mutt/mail.html
+set my_mail=~/.mutt-tmp/html-preview.html
 macro pager,attach V \
 "<enter-command>unset wait_key<enter>\
 <shell-escape>mkdir -p $(dirname $my_mail)<enter>\
