@@ -3,7 +3,7 @@
 #+begin_src sh
 git clone --recurse-submodules https://github.com/andrewpeck/dotfiles ~/dotfiles
 mkdir  ~/.config/nixpkgs
-ln -s ~/dotfiles/home.nix ~/.config/nixpkgs/home.nix
+ln -s ~/dotfiles/home.nix ~/.config/home-manager/home.nix
 #+end_src sh
 
 #+begin_src sh
