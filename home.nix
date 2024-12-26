@@ -88,8 +88,13 @@
     ".config/git/ignore".source = ~/dotfiles/gitignore;
     ".gitconfig".source = ~/dotfiles/gitconfig;
 
-    # tools
+    # vim
     ".vimrc".source = ~/dotfiles/vim/vimrc;
+    ".vim/autoload/plug.vim".source = ~/dotfiles/vim/vim/autoload/plug.vim;
+    ".vim/UltiSnips".source = ~/dotfiles/vim/vim/UltiSnips;
+    ".vim/colors".source = ~/dotfiles/vim/vim/colors;
+
+    # tools
     ".aspell.en.pws".source = ~/dotfiles/aspell.en.pws;
     ".bashrc".source = ~/dotfiles/bashrc;
     ".conkyrc".source = ~/dotfiles/conkyrc;
