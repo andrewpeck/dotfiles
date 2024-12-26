@@ -79,7 +79,7 @@
   home.file = {
 
     ".config/git/ignore".source = ~/dotfiles/gitignore;
-    ".git-config".source = ~/dotfiles/gitconfig;
+    ".gitconfig".source = ~/dotfiles/gitconfig;
 
     # tools
     ".vimrc".source = ~/dotfiles/vim/vimrc;
@@ -87,7 +87,6 @@
     ".bashrc".source = ~/dotfiles/bashrc;
     ".conkyrc".source = ~/dotfiles/conkyrc;
     ".fdignore".source = ~/dotfiles/fdignore;
-    ".icons".source = ~/dotfiles/icons;
     ".screenrc".source = ~/dotfiles/screenrc;
     ".tmux.conf".source = ~/dotfiles/tmux.conf;
     ".proselintrc".source = ~/dotfiles/proselintrc;
