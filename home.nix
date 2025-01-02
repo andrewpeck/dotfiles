@@ -120,6 +120,7 @@
     ".config/pycodestyle".source = ~/dotfiles/pycodestyle;
     ".pylintrc".source = ~/dotfiles/pylintrc;
     ".flake8rc".source = ~/dotfiles/flake8rc;
+    ".pdbrc".source = ~/dotfiles/pdbrc;
 
     # x/shell
     ".config/fish".source = ~/dotfiles/fish;
