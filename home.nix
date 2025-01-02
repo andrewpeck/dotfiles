@@ -121,6 +121,7 @@
     ".pylintrc".source = ~/dotfiles/pylintrc;
     ".flake8rc".source = ~/dotfiles/flake8rc;
     ".pdbrc".source = ~/dotfiles/pdbrc;
+    ".mypy.ini".source = ~/dotfiles/mypy.ini;
 
     # x/shell
     ".config/fish".source = ~/dotfiles/fish;
