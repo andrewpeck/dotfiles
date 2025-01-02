@@ -29,6 +29,7 @@
     pkgs.zlib
     pkgs.borgbackup
     pkgs.borgmatic
+    pkgs.glow
     pkgs.restic
     pkgs.shellcheck
     pkgs.xcalib
