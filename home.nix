@@ -23,6 +23,7 @@
     pkgs.xorg.xwininfo # emacs everywhere
     pkgs.xdotool # emacs everywhere
     #utils
+    pkgs.babelfish
     pkgs.gcc
     pkgs.glibc
     pkgs.zlib
