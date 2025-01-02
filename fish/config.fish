@@ -42,3 +42,12 @@ setenv INCLUDE_PATH "$HOME/.nix-profile/include:$INCLUDE_PATH"
 setenv LIBRARY_PATH "$HOME/.nix-profile/lib:$LIBRARY_PATH"
 setenv LD_LIBRARY_PATH "$HOME/.nix-profile/lib:$LD_LIBRARY_PATH"
 setenv LD_LIBRARY_PATH "$HOME/.nix-profile/lib64:$LD_LIBRARY_PATH"
+
+abbr --add gco 'git checkout'
+abbr --add gct 'git checkout -t'
+abbr --add gg  'git status'
+abbr --add gba 'git branch -a'
+
+abbr --add sai 'sudo apt install'
+abbr --add sar 'sudo apt remove'
+abbr --add sau 'sudo apt update && sudo apt upgrade'
