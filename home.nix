@@ -69,6 +69,7 @@
     pkgs.python312Packages.pyment
     pkgs.python312Packages.pytest
     pkgs.python312Packages.jupytext
+    pkgs.python312Packages.pylint-venv
     pkgs.pylint
     pkgs.pyright
     pkgs.mypy
