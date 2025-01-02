@@ -52,8 +52,8 @@
     pkgs.yamllint
     pkgs.markdownlint-cli
     pkgs.pandoc
-    pkgs.grip
     pkgs.rlwrap
+    pkgs.python312Packages.grip
     #tcl
     pkgs.nagelfar
     pkgs.tcl
