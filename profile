@@ -3,7 +3,7 @@
 
 export XDG_DATA_DIRS="$HOME/.nix-profile/share:${XDG_DATA_DIRS}"
 
-export TZ=:/etc/localtime
+export TZ='America/Los_Angeles'
 
 if [ -e "$HOME"/.nix-profile/etc/profile.d/nix.sh ]; then
     . "$HOME"/.nix-profile/etc/profile.d/nix.sh;
