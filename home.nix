@@ -71,6 +71,7 @@
     pkgs.python312Packages.jupytext
     pkgs.python312Packages.pylint-venv
     pkgs.pylint
+    pkgs.uv
     pkgs.pyright
     pkgs.mypy
     pkgs.ruff
