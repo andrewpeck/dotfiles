@@ -1,2 +1,2 @@
 #!/bin/bash
-alacritty --class "fzf-files" -e "fzf-files"
+xterm -e "bash -c 'cd ~/; fzf-files'"

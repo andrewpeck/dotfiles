@@ -1,4 +1,4 @@
 #!/bin/bash
 set -m
 file="$HOME/$(fzf --height 100% --reverse)"
-[ -f "$file" ] && xdg-open "$file" & >/dev/null 2>&1
+[ -f "$file" ] && xdg-open "$file" > /dev/null 2>&1
