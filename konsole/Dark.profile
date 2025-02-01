@@ -1,6 +1,6 @@
 [Appearance]
-ColorScheme=DarkPastels
-Font=Hack,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+ColorScheme=FlatUI
+Font=Hack Nerd Font,14,-1,5,50,0,0,0,0,0
 
 [General]
 Name=Dark
