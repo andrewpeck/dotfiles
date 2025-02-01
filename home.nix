@@ -52,6 +52,7 @@
     pkgs.yamllint
     pkgs.markdownlint-cli
     pkgs.pandoc
+    pkgs.nerd-fonts.hack
     pkgs.rlwrap
     pkgs.python312Packages.grip
     #tcl
