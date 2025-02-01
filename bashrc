@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+export PATH=$PATH:"$HOME/dotfiles/scripts"
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
