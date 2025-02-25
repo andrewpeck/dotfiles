@@ -4,7 +4,7 @@
     backlight_duration_hands_out, backlight_duration_hands_in, backlight_duration_powered, backlight-timed, led_control, led_zone_, fn-swap, persistent-remappable-keys,
     disable-keyboard-keys, crown-smooth, divert-crown, divert-gkeys, m-key-leds, mr-key-led, multiplatform, gesture2-gestures, gesture2-divert, gesture2-params,
     sidetone, equalizer, adc_power_management]
-  _battery: 4100
+  _battery: 0x1004
   _modelId: B03400000000
   _sensitive: {dpi: true}
   _serial: 39961AA3
@@ -21,3 +21,17 @@
   smart-shift: 0xa
   thumb-scroll-invert: false
   thumb-scroll-mode: false
+- _NAME: ERGO M575 Trackball
+  _absent: [hi-res-scroll, lowres-scroll-mode, hires-smooth-invert, hires-smooth-resolution, hires-scroll-mode, scroll-ratchet, smart-shift, thumb-scroll-invert,
+    thumb-scroll-mode, onboard_profiles, report_rate, report_rate_extended, pointer_speed, speed-change, backlight, backlight_level, backlight_duration_hands_out,
+    backlight_duration_hands_in, backlight_duration_powered, backlight-timed, led_control, led_zone_, fn-swap, persistent-remappable-keys, disable-keyboard-keys,
+    crown-smooth, divert-crown, divert-gkeys, m-key-leds, mr-key-led, multiplatform, change-host, gesture2-gestures, gesture2-divert, gesture2-params, sidetone,
+    equalizer, adc_power_management]
+  _battery: 4100
+  _modelId: B02740960000
+  _serial: 4157A93A
+  _unitId: 4157A93A
+  _wpid: '4096'
+  divert-keys: {0x52: 0x0, 0x53: 0x0, 0x56: 0x0}
+  dpi: 400
+  reprogrammable-keys: {0x50: 0x50, 0x51: 0x51, 0x52: 0x52, 0x53: 0x53, 0x56: 0x56}
