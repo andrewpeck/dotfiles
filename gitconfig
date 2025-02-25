@@ -4,7 +4,41 @@ useConfigOnly = true
 [credential]
 helper = store
 [core]
+fsmonitor = true
+untrackedCache = true
 editor = vim
 excludesfile = ~/.config/git/ignore
 [rebase]
+autoSquash = true
 autoStash = true
+updateRefs = true
+[branch]
+sort = -committerdate
+[tag]
+sort = version:refname
+[init]
+defaultBranch = main
+[diff]
+algorithm = histogram
+colorMoved = plain
+mnemonicPrefix = true
+renames = true
+[push]
+default = simple
+autoSetupRemote = true
+followTags = true
+[fetch]
+prune = true
+pruneTags = true
+all = true
+[pull]
+rebase = true
+[help]
+autocorrect = prompt
+[commit]
+verbose = true
+[rerere]
+enabled = true
+autoupdate = true
+[merge]
+conflictstyle = zdiff3
