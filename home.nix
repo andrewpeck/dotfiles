@@ -73,7 +73,7 @@
     pkgs.python312Packages.pylint-venv
     pkgs.pylint
     pkgs.uv
-    pkgs.pyright
+    pkgs.basedpyright
     pkgs.mypy
     pkgs.ruff
     pkgs.python312Packages.autopep8
