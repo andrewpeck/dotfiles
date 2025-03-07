@@ -100,6 +100,7 @@
     ".vim/colors".source = ~/dotfiles/vim/vim/colors;
 
     # tools
+    ".tclsyntaxdb".source = ~/dotfiles/syntaxdb86.tcl;
     ".aspell.en.pws".source = ~/dotfiles/aspell.en.pws;
     ".bashrc".source = ~/dotfiles/bashrc;
     ".conkyrc".source = ~/dotfiles/conkyrc;
