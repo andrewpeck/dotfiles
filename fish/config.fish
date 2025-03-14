@@ -34,16 +34,6 @@ setenv BROWSER firefox
 setenv EDITOR vim
 setenv LESSOPEN "|lesspipe.sh %s" # https://github.com/wofr06/lesspipe
 
-setenv CPPFLAGS "-I$HOME/.nix-profile/include $CPPFLAGS"
-setenv CFLAGS "-I$HOME/.nix-profile/include $CFLAGS"
-setenv LDFLAGS "-L$HOME/.nix-profile/lib $LDFLAGS"
-setenv PKG_CONFIG_PATH "$HOME/.nix-profile/lib/pkgconfig:$HOME/.nix-profile/share/pkgconfig:$PKG_CONFIG_PATH"
-setenv C_INCLUDE_PATH "$HOME/.nix-profile/include:$C_INCLUDE_PATH"
-setenv INCLUDE_PATH "$HOME/.nix-profile/include:$INCLUDE_PATH"
-setenv LIBRARY_PATH "$HOME/.nix-profile/lib:$LIBRARY_PATH"
-setenv LD_LIBRARY_PATH "$HOME/.nix-profile/lib:$LD_LIBRARY_PATH"
-setenv LD_LIBRARY_PATH "$HOME/.nix-profile/lib64:$LD_LIBRARY_PATH"
-
 abbr --add gco 'git checkout'
 abbr --add gct 'git checkout -t'
 abbr --add gg  'git status'

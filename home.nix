@@ -15,23 +15,17 @@
     pkgs.nix-search-cli
     pkgs.nixfmt-classic
     pkgs.nil
-    #emacs
-    pkgs.emacs30
-    pkgs.emacs-lsp-booster
-    pkgs.tree-sitter
     pkgs.xclip # org download
     pkgs.xorg.xwininfo # emacs everywhere
     pkgs.xdotool # emacs everywhere
     #utils
     pkgs.babelfish
-    pkgs.gcc
-    pkgs.glibc
-    pkgs.zlib
     pkgs.borgbackup
     pkgs.borgmatic
     pkgs.glow
     pkgs.restic
     pkgs.shellcheck
+    pkgs.alacritty
     pkgs.xcalib
     pkgs.xbindkeys
     pkgs.fzf
@@ -52,12 +46,16 @@
     pkgs.yamllint
     pkgs.markdownlint-cli
     pkgs.pandoc
+    # https://mynixos.com/nixpkgs/packages/nerd-fonts
     pkgs.nerd-fonts.hack
+    pkgs.nerd-fonts._3270
+    pkgs.nerd-fonts.inconsolata-go
+    pkgs.nerd-fonts.terminess-ttf
+    pkgs.nerd-fonts.sauce-code-pro
     pkgs.rlwrap
     pkgs.python312Packages.grip
     #tcl
     pkgs.nagelfar
-    pkgs.tcl
     #c/c++
     pkgs.bear
     pkgs.ccls
@@ -79,8 +77,6 @@
     pkgs.python312Packages.autopep8
     pkgs.isort
     # hdl
-    pkgs.verilator
-    pkgs.ghdl-llvm
     pkgs.gtkwave
     # tex
     pkgs.texlivePackages.digestif
@@ -145,6 +141,8 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
   };
+
+  fonts.fontconfig.enable = true;
 
   # Home Manager can also manage your environment variables through 'home.sessionVariables'
   home.sessionVariables = {
