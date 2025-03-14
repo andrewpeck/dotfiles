@@ -12,3 +12,5 @@ fi # added by Nix installer
 if [ -e "$HOME"/.cargo/env ]; then
 . "$HOME"/.cargo/env
 fi
+
+export PATH=$PATH:"$HOME/dotfiles/scripts"
