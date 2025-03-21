@@ -1,0 +1,3 @@
+workspace=$(wmctrl -d | awk '{ if ($2 == "'*'") print $1}')
+window=$(wmctrl -l | awk -v workspace="$workspace" '{ if ($2 == workspace) print $0}' | grep "\- Emacs" | head -n 1 | cut -d " " -f1)
+wmctrl -i -a $window
