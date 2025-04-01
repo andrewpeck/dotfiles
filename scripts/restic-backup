@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+restic -r "$1" --verbose backup \
+  ~/.doom.d ~/work ~/Sync /Movies /Music /Photos ~/.doom.d/ \
+  --exclude .venv .Xil .unfo-fu .pyc .log .out .texn .dcp .rpt .jou target/release
