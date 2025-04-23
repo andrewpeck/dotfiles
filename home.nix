@@ -104,6 +104,7 @@
     ".screenrc".source = ~/dotfiles/screenrc;
     ".tmux.conf".source = ~/dotfiles/tmux.conf;
     ".proselintrc".source = ~/dotfiles/proselintrc;
+    ".mdlrc".source = ~/dotfiles/markdownlint-config.yml;
     ".local/share/applications/org-protocol.desktop".source = ~/dotfiles/org-protocol.desktop;
 
     #mutable configs
