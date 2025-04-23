@@ -125,6 +125,7 @@
     ".flake8rc".source = ~/dotfiles/flake8rc;
     ".pdbrc".source = ~/dotfiles/pdbrc;
     ".mypy.ini".source = ~/dotfiles/mypy.ini;
+    ".ruff.toml".source = ~/dotfiles/ruff.toml;
 
     # x/shell
     ".config/fish".source = ~/dotfiles/fish;
