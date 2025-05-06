@@ -1,0 +1,2 @@
+# https://www.jamescherti.com/better-git-diff-emacs-lisp-elisp/
+*.el diff=elisp

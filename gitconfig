@@ -42,3 +42,6 @@ enabled = true
 autoupdate = true
 [merge]
 conflictstyle = zdiff3
+# https://www.jamescherti.com/better-git-diff-emacs-lisp-elisp/
+[diff "elisp"]
+xfuncname = ^\\([^[:space:]]*def[^[:space:]]+[[:space:]]+([^()[:space:]]+)

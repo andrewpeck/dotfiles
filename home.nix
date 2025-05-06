@@ -88,6 +88,7 @@
 
     ".config/git/ignore".source = ~/dotfiles/gitignore;
     ".gitconfig".source = ~/dotfiles/gitconfig;
+    ".gitattributes".source = ~/dotfiles/gitattributes;
 
     # vim
     ".vimrc".source = ~/dotfiles/vim/vimrc;
