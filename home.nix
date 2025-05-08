@@ -106,6 +106,7 @@
     ".tmux.conf".source = ~/dotfiles/tmux.conf;
     ".proselintrc".source = ~/dotfiles/proselintrc;
     ".mdlrc".source = ~/dotfiles/markdownlint-config.yml;
+    ".config/ghostty/config".source = ~/dotfiles/ghostty-config;
     ".local/share/applications/org-protocol.desktop".source = ~/dotfiles/org-protocol.desktop;
 
     #mutable configs
