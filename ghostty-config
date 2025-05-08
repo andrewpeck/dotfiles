@@ -1,14 +1,48 @@
 # -*- mode: conf -*-
-# The syntax is "key = value". The whitespace around the
-# equals doesn't matter.
-background = 282c34
-foreground = ffffff
+#
+# This is the configuration file for Ghostty.
+#
+# Config syntax crash course
+# ==========================
+# # The config file consists of simple key-value pairs,
+# # separated by equals signs.
+# font-family = Iosevka
+# window-padding-x = 2
+#
+# # Spacing around the equals sign does not matter.
+# # All of these are identical:
+# key=value
+# key= value
+# key =value
+# key = value
+#
+# # Any line beginning with a # is a comment. It's not possible to put
+# # a comment after a config option, since it would be interpreted as a
+# # part of the value. For example, this will have a value of "#123abc":
+# background = #123abc
+#
+# # Empty values are used to reset config keys to default.
+# key =
+#
+# # Some config options have unique syntaxes for their value,
+# # which is explained in the docs for that config option.
+# # Just for example:
+# resize-overlay-duration = 4s 200ms
 
 # Comments start with a `#` and are only valid on their own line.
 # Blank lines are ignored!
 
-keybind = ctrl+z=close_surface
-keybind = ctrl+d=new_split:right
+#keybind = ctrl+z=close_surface
+keybind = ctrl+shift+9=new_split:right
+keybind = ctrl+shift+0=new_split:down
 
 # Empty values reset the configuration to the default value
 font-family =
+font-size = 15
+
+gtk-adwaita = false
+
+gtk-wide-tabs = false
+
+theme = ayu
+#theme = CLRS
