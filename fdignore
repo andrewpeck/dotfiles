@@ -1,7 +1,7 @@
 # -*- mode: gitignore -*-
 
 emacs-backups
-
+snap
 Downloads
 node_modules
 .cache
