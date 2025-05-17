@@ -1,0 +1,21 @@
+#!/usr/bin/env fish
+
+function preview -a file
+    if test -d $file
+        tree $file
+    else
+        set -l ext (string lower (path extension $file))
+        switch $ext
+            case ".png" ".jpg" ".jpeg" ".gif" ".PNG" ".jpg"
+                imgcat $file
+            case ".pdf" ".PDF"
+                pdftoppm -png -f 1 -l 1 $file | imgcat
+            case ".ipynb"
+                jupytext $file --to markdown -o - | bat --color=always -l markdown
+            case '*'
+                bat --style=numbers --line-range=:500 $file
+        end
+    end
+end
+
+preview $argv
