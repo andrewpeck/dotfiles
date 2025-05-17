@@ -130,7 +130,7 @@
     ".ruff.toml".source = ~/dotfiles/ruff.toml;
 
     # x/shell
-    ".config/fish".source = ~/dotfiles/fish;
+    ".config/fish".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/fish;
     ".profile".source = ~/dotfiles/profile;
     ".xbindkeysrc".source = ~/dotfiles/xbindkeysrc;
     ".xinitrc".source = ~/dotfiles/xinitrc;
