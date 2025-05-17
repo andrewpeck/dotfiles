@@ -19,16 +19,19 @@
 "spectacle -bcr"
     Print
 
-"konsole -e ipython3"
+"ghostty -e ipython3"
    Mod2+Mod4+c
 
 "dolphin ~/"
    Mod2+Mod4+f
 
-"emacsclient -nc -a 'emacs'"
+"dolphin ~/"
    Mod2+Mod4+e
 
-"konsole"
+"emacsclient -nc -a 'emacs'"
+   Mod2+Mod4+r
+
+"ghostty"
    Mod2+Mod4+t
 
 "sh ~/dotfiles/scripts/emacs-everywhere"
