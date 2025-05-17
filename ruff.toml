@@ -30,3 +30,12 @@ exclude = [
 ]
 
 extend-exclude = ["*.ipynb"]
+line-length = 120
+
+# https://docs.astral.sh/ruff/rules/#error-e
+[lint]
+select = ["A", "B", "C", "E", "F", "COM818"]
+ignore = []
+
+[format]
+quote-style = "single"
