@@ -49,3 +49,6 @@ if test "$INSIDE_EMACS" = "vterm" \
     -a -f "$EMACS_VTERM_PATH/etc/emacs-vterm.fish"
     source "$EMACS_VTERM_PATH/etc/emacs-vterm.fish"
 end
+
+bind \cy 'set file "$(fd . ~/Pictures | fzf --height 40% --preview "preview {}")" && [ -f "$file" ] && xdg-open "$file"'
+bind \co 'set file "$(fd . ~/ | fzf --height 40% --preview "preview {}")" && [ -f "$file" ] && xdg-open "$file"'
