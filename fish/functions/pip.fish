@@ -1,4 +1,3 @@
-#function pip --description 'alias pip=python -m pip'
-#  python -m pip $argv
-#
-#end
+function pip --description ''
+ uv pip $argv
+end
