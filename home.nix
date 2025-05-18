@@ -107,6 +107,7 @@
     ".proselintrc".source = ~/dotfiles/proselintrc;
     ".mdlrc".source = ~/dotfiles/markdownlint-config.yml;
     ".config/ghostty/config".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/ghostty-config;
+    ".wezterm.lua".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/wezterm.lua;
     ".local/share/applications/org-protocol.desktop".source = ~/dotfiles/org-protocol.desktop;
 
     #mutable configs
