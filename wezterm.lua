@@ -11,10 +11,15 @@ config.initial_cols = 120
 config.initial_rows = 28
 
 -- or, changing the font size and color scheme.
-config.font_size = 10
-config.color_scheme = 'Gruvbox Dark (Gogh)'
-config.use_fancy_tab_bar = false
+if (wezterm.hostname() == "larry") then
+  config.font_size = 10
+else
+  config.font_size = 15
+end
 
+config.color_scheme = 'Gruvbox Dark (Gogh)'
+
+config.use_fancy_tab_bar = false
 
 config.keys = {
   -- Turn off the default CMD-m Hide action, allowing CMD-m to
