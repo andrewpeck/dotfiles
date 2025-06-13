@@ -50,11 +50,12 @@
     pkgs.markdownlint-cli
     pkgs.pandoc
     # https://mynixos.com/nixpkgs/packages/nerd-fonts
+    pkgs.nerd-fonts.fira-code
     pkgs.nerd-fonts.hack
     pkgs.nerd-fonts._3270
     pkgs.nerd-fonts.inconsolata-go
     pkgs.nerd-fonts.terminess-ttf
-    pkgs.nerd-fonts.sauce-code-pro
+    pkgs.courier-prime
     pkgs.rlwrap
     pkgs.python312Packages.grip
     #tcl
