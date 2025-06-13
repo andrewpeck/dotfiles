@@ -21,19 +21,31 @@ config.color_scheme = 'Gruvbox Dark (Gogh)'
 
 config.use_fancy_tab_bar = false
 
+config.scrollback_lines = 100000
+
+-- config.show_close_tab_button_in_tabs = true
+config.use_fancy_tab_bar = true
+
 config.keys = {
-  -- Turn off the default CMD-m Hide action, allowing CMD-m to
-  -- be potentially recognized and handled by the tab
   {
     key = '(',
     mods = 'CTRL|SHIFT',
     action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
   },
+
   {
     key = ')',
     mods = 'CTRL|SHIFT',
     action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
   },
+
+  -- close pane with confirmation if active process
+  {
+    key = 'w',
+    mods = 'CTRL|SHIFT',
+    action = wezterm.action.CloseCurrentPane { confirm = true },
+  },
+
 }
 -- Finally, return the configuration to wezterm:
 return config
