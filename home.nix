@@ -11,6 +11,9 @@
 
   # Packages
   home.packages = [
+    #fennel
+    pkgs.lua5_4
+    pkgs.lua54Packages.fennel
     # nix
     pkgs.nix-search-cli
     pkgs.nixfmt-classic
