@@ -143,8 +143,11 @@ function add_to_path {
 
 #Ctrl+o to open files directly with preferred application.
 bind -x '"\C-o": file="$(fzf --height 40% --reverse)" && [ -f "$file" ] && xdg-open "$file"'
+bind -x '"\C-l": file="$(find ~/Screenshots | fzf --height 40% --reverse)" && [ -f "$file" ] && xdg-open "$file"'
 #
 bind -x '"\C-p": file="$(fzf --preview "bat --color=always --style=numbers --line-range=:500 {}")" && [ -f "$file" ] && xdg-open "$file"'
+
+bind -x '"\C-l": file="$(find ~/Screenshots | fzf --height 40% --preview "imgcat {}")" && [ -f "$file" ] && xdg-open "$file"'
 
 function fcd() {
     local dir;
