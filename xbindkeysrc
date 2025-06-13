@@ -19,7 +19,7 @@
 "spectacle -bcr"
     Print
 
-"ghostty -e ipython3"
+"wezterm -e ipython3"
    Mod2+Mod4+c
 
 "dolphin ~/"
@@ -31,7 +31,7 @@
 "emacsclient -nc -a 'emacs'"
    Mod2+Mod4+r
 
-"ghostty"
+"wezterm"
    Mod2+Mod4+t
 
 "sh ~/dotfiles/scripts/emacs-everywhere"
@@ -44,4 +44,4 @@
     F9
 
 "fzf-files-popup"
-   Control + o
+   Ctrl + Shift + O
