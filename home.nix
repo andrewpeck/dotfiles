@@ -102,7 +102,7 @@
     # tools
     ".tclsyntaxdb".source = ~/dotfiles/syntaxdb86.tcl;
     ".aspell.en.pws".source = ~/dotfiles/aspell.en.pws;
-    ".bashrc".source = ~/dotfiles/bashrc;
+    ".bashrc".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/bashrc;
     ".conkyrc".source = ~/dotfiles/conkyrc;
     ".fdignore".source = ~/dotfiles/fdignore;
     ".screenrc".source = ~/dotfiles/screenrc;
@@ -135,7 +135,7 @@
 
     # x/shell
     ".config/fish".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/fish;
-    ".profile".source = ~/dotfiles/profile;
+    ".profile".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/profile;
     ".xbindkeysrc".source = ~/dotfiles/xbindkeysrc;
     ".xinitrc".source = ~/dotfiles/xinitrc;
 
