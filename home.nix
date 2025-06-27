@@ -132,7 +132,7 @@
     ".flake8rc".source = ~/dotfiles/flake8rc;
     ".pdbrc".source = ~/dotfiles/pdbrc;
     ".mypy.ini".source = ~/dotfiles/mypy.ini;
-    ".ruff.toml".source = ~/dotfiles/ruff.toml;
+    ".ruff.toml".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/ruff.toml;
 
     # x/shell
     ".config/fish".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/fish;
