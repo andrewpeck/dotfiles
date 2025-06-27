@@ -144,6 +144,10 @@
     ".mpd/mpd.conf".source = ~/dotfiles/mpd/mpd.conf;
     ".ncmpcpp/config".source = ~/dotfiles/ncmpcpp/config;
 
+    # snes9x for flatpak
+    # add /nix/store permissions in flatseal
+    ".var/app/com.snes9x.Snes9x/config/snes9x/snes9x.conf".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/snes9x.conf;
+
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
     #   org.gradle.console=verbose
