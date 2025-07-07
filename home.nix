@@ -95,6 +95,7 @@
     ".gitattributes".source = ~/dotfiles/gitattributes;
 
     # vim
+    ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/nvim;
     ".vimrc".source = ~/dotfiles/vim/vimrc;
     ".vim/autoload/plug.vim".source = ~/dotfiles/vim/vim/autoload/plug.vim;
     ".vim/UltiSnips".source = ~/dotfiles/vim/vim/UltiSnips;
