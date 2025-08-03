@@ -144,7 +144,8 @@
     ".config/fish".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/fish;
     ".profile".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/profile;
     ".xbindkeysrc".source = ~/dotfiles/xbindkeysrc;
-    ".xinitrc".source = ~/dotfiles/xinitrc;
+    #".xinitrc".source = ~/dotfiles/xinitrc;
+    ".Xresources".source = ~/dotfiles/Xresources;
 
     # mpd
     ".mpd/mpd.conf".source = ~/dotfiles/mpd/mpd.conf;
