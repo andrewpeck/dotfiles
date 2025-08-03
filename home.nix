@@ -12,6 +12,7 @@
   # Packages
   home.packages = [
     pkgs.dmenu
+    pkgs.rofi
     #fennel
     pkgs.lua5_4
     pkgs.lua54Packages.fennel
@@ -92,6 +93,7 @@
   home.file = {
 
     ".config/i3/config".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/i3-config;
+    ".config/rofi/config.rasi".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/rofi-config.rasi;
 
     ".config/git/ignore".source = ~/dotfiles/gitignore;
     ".gitconfig".source = ~/dotfiles/gitconfig;
