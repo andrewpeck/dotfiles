@@ -44,6 +44,7 @@ abbr --add sar 'sudo apt remove'
 abbr --add sau 'sudo apt update && sudo apt upgrade'
 abbr --add gl 'git log --reverse'
 
+abbr --add jpl 'uv run --with jupyter jupyter lab'
 # https://github.com/akermu/emacs-libvterm
 if test "$INSIDE_EMACS" = "vterm" \
     -a -n "$EMACS_VTERM_PATH" \
