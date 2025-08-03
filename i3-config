@@ -216,3 +216,8 @@ bindsym $mod+r mode "resize"
 exec --no-startup-id xfce4-panel --disable-wm-check
 
 exec "autorandr --change"
+
+# keybinding to lock screen
+# and auto lock the screen
+bindsym $ctrl+$alt++l exec "i3lock -c 000000 && xset dpms force off"
+#exec "xautolock -detectsleep -time 3 -locker \"i3lock -c 000000\""
