@@ -11,6 +11,7 @@
 
   # Packages
   home.packages = [
+    pkgs.autorandr
     pkgs.dmenu
     pkgs.rofi
     #fennel

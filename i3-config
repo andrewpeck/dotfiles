@@ -214,3 +214,5 @@ bindsym $mod+r mode "resize"
 
 # startup programs
 exec --no-startup-id xfce4-panel --disable-wm-check
+
+exec "autorandr --change"
