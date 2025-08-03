@@ -79,7 +79,6 @@
     pkgs.pylint
     pkgs.uv
     pkgs.basedpyright
-    pkgs.mypy
     pkgs.ruff
     pkgs.python312Packages.autopep8
     pkgs.isort
