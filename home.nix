@@ -179,7 +179,7 @@
   #-------------------------------------------------------------------------------
   # systemd services
   #-------------------------------------------------------------------------------
-  services.emacs.enable = true;
+  # services.emacs.enable = true;
 
   systemd.user.services.xbindkeys = {
     Unit = {Description = "xbindkeys";};
