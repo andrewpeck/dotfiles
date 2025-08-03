@@ -11,6 +11,7 @@
 
   # Packages
   home.packages = [
+    pkgs.dmenu
     #fennel
     pkgs.lua5_4
     pkgs.lua54Packages.fennel
@@ -89,6 +90,8 @@
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
+
+    ".config/i3/config".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/i3-config;
 
     ".config/git/ignore".source = ~/dotfiles/gitignore;
     ".gitconfig".source = ~/dotfiles/gitconfig;
