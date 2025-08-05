@@ -92,7 +92,9 @@
   # plain files is through 'home.file'.
   home.file = {
 
+    ".config/picom/picom.conf".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/picom.conf;
     ".config/i3/config".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/i3-config;
+    ".config/sway/config".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/i3-config;
     ".config/rofi/config.rasi".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/rofi-config.rasi;
 
     ".config/git/ignore".source = ~/dotfiles/gitignore;
