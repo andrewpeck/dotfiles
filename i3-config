@@ -80,7 +80,7 @@ tiling_drag titlebar
 
 # start a terminal
 bindsym $mod+Return exec $term
-bindsym $mod+$ctrl+t exec $term
+bindsym $mod+$ctrl+t exec org-capture
 bindsym $mod+$ctrl+e exec emacs
 bindsym $mod+$ctrl+f exec dolphin
 
