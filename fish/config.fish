@@ -2,9 +2,9 @@
 #    # Commands to run in interactive sessions can go here
 #    pyenv init - | source
 #end
+alias vim="nvim"
 alias rmi="rm -i"
 alias e='emacsclient -nc -a emacs $argv'
-alias pytest='python -m pytest'
 alias log='journalctl -x -e'
 alias ytdl='youtube-dl -x --audio-format mp3'
 alias glog='git log --pretty=format:"%h%x09%an%x09%ad%x09%s"'
@@ -34,6 +34,7 @@ setenv BROWSER firefox
 setenv EDITOR vim
 setenv LESSOPEN "|lesspipe.sh %s" # https://github.com/wofr06/lesspipe
 
+abbr --add venv 'uv venv --python 3.12 && source .venv/bin/activate.fish'
 abbr --add gco 'git checkout'
 abbr --add gct 'git checkout -t'
 abbr --add gg  'git status'
@@ -45,6 +46,8 @@ abbr --add sau 'sudo apt update && sudo apt upgrade'
 abbr --add gl 'git log --reverse'
 
 abbr --add jpl 'uv run --with jupyter jupyter lab'
+abbr --add pipq 'pip install -e . --no-deps --no-build-isolation'
+
 # https://github.com/akermu/emacs-libvterm
 if test "$INSIDE_EMACS" = "vterm" \
     -a -n "$EMACS_VTERM_PATH" \
