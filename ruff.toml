@@ -34,8 +34,26 @@ line-length = 120
 
 # https://docs.astral.sh/ruff/rules/#error-e
 [lint]
-select = ["A", "B", "C", "E", "F", "COM818"]
+select = [
+"A",
+"B", # bugbear
+"C",
+"E", # pycodestyle
+"E401",
+"F", # pyflakes
+"COM818", # commas
+"ERA", # eradicate commented code
+"W", # pycodestyle warnings
+"I", # isort
+"PL", #pylint
+]
 ignore = []
 
 [format]
 quote-style = "single"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+[isort]
+force-single-line = true
