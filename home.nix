@@ -11,12 +11,18 @@
 
   # Packages
   home.packages = [
-    pkgs.autorandr
+    pkgs.wordnet
     pkgs.dmenu
+    pkgs.xss-lock
+    pkgs.parcellite
+    pkgs.xautolock
+    pkgs.flameshot
     pkgs.rofi
+    pkgs.neovim
     #fennel
     pkgs.lua5_4
     pkgs.lua54Packages.fennel
+    pkgs.lua-language-server
     # nix
     pkgs.nix-search-cli
     pkgs.nixfmt-classic
@@ -33,7 +39,7 @@
     pkgs.shellcheck
     pkgs.alacritty
     pkgs.xcalib
-    pkgs.xbindkeys
+    # pkgs.xbindkeys
     pkgs.fzf
     pkgs.rare-regex
     pkgs.isync
@@ -73,7 +79,6 @@
     # python
     pkgs.python312Packages.pyflakes
     pkgs.python312Packages.pyment
-    pkgs.python312Packages.pytest
     pkgs.python312Packages.jupytext
     pkgs.python312Packages.pylint-venv
     pkgs.pylint
@@ -92,6 +97,8 @@
   # plain files is through 'home.file'.
   home.file = {
 
+    ".config/autorandr".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/autorandr;
+
     ".config/picom/picom.conf".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/picom.conf;
     ".config/i3/config".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/i3-config;
     ".config/sway/config".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/i3-config;
@@ -101,9 +108,11 @@
     ".gitconfig".source = ~/dotfiles/gitconfig;
     ".gitattributes".source = ~/dotfiles/gitattributes;
 
+    ".sbclrc".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/sbclrc;
+
     # vim
     ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/nvim;
-    ".vimrc".source = ~/dotfiles/vim/vimrc;
+    #".vimrc".source = ~/dotfiles/vim/vimrc;
     ".vim/autoload/plug.vim".source = ~/dotfiles/vim/vim/autoload/plug.vim;
     ".vim/UltiSnips".source = ~/dotfiles/vim/vim/UltiSnips;
     ".vim/colors".source = ~/dotfiles/vim/vim/colors;
@@ -145,7 +154,7 @@
     # x/shell
     ".config/fish".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/fish;
     ".profile".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/profile;
-    ".xbindkeysrc".source = ~/dotfiles/xbindkeysrc;
+    # ".xbindkeysrc".source = ~/dotfiles/xbindkeysrc;
     #".xinitrc".source = ~/dotfiles/xinitrc;
     ".Xresources".source = ~/dotfiles/Xresources;
 
@@ -183,16 +192,16 @@
   #-------------------------------------------------------------------------------
   # services.emacs.enable = true;
 
-  systemd.user.services.xbindkeys = {
-    Unit = {Description = "xbindkeys";};
-    Install = {WantedBy = [ "default.target" ];};
-    Service = {
-        Type = "simple";
-        # ExecStart = "${pkgs.xbindkeys}/bin/xbindkeys";
-        ExecStart = "${pkgs.writeShellScript "xbindkeys" ''${pkgs.xbindkeys}/bin/xbindkeys -n''}";
-        Environment = "PATH=${builtins.getEnv("HOME")}/.nix-profile/bin/:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin";
-        Restart = "on-failure";
-        SuccessExitStatus="15";
-    };
-  };
+  # systemd.user.services.xbindkeys = {
+  #   Unit = {Description = "xbindkeys";};
+  #   Install = {WantedBy = [ "default.target" ];};
+  #   Service = {
+  #       Type = "simple";
+  #       # ExecStart = "${pkgs.xbindkeys}/bin/xbindkeys";
+  #       ExecStart = "${pkgs.writeShellScript "xbindkeys" ''${pkgs.xbindkeys}/bin/xbindkeys -n''}";
+  #       Environment = "PATH=${builtins.getEnv("HOME")}/.nix-profile/bin/:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin";
+  #       Restart = "on-failure";
+  #       SuccessExitStatus="15";
+  #   };
+  # };
 }
