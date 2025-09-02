@@ -239,3 +239,4 @@ function killmyfirefox() {
 #find . -name '*.cpp' -type f -exec bash -c 'expand -t 4 "$0" | sponge "$0"' {} \;
 
 export HOG_NOTIFY=1
+. "$HOME/.cargo/env"
