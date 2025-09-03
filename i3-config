@@ -78,7 +78,7 @@ bindsym $mod+Return exec $term
 bindsym $mod+$ctrl+t exec org-capture
 bindsym $mod+$ctrl+e exec "emacsclient -nc -a emacs"
 bindsym $mod+$ctrl+f exec dolphin
-bindsym $mod+$ctrl+c exec "emacsclient -nc -a emacs --eval \\"(calc)\\""
+bindsym $mod+$ctrl+c exec "emacsclient -nc -a emacs --eval \\"(calc-popup)\\""
 
 bindsym $mod+x exec "autorandr --change"
 
@@ -247,3 +247,5 @@ for_window [class="Slack"] move to workspace 10
 for_window [title="Signal"] move to workspace 10
 for_window [class="zoom"] floating enable
 for_window [class="zoom"] sticky enable
+for_window [title="^Calc Popup$"] floating enable
+for_window [title="^Calc Popup$"] sticky enable
