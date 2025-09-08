@@ -105,9 +105,9 @@
     ".config/sway/config".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/i3-config;
     ".config/rofi/config.rasi".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/rofi-config.rasi;
 
-    ".config/git/ignore".source = ~/dotfiles/gitignore;
-    ".gitconfig".source = ~/dotfiles/gitconfig;
-    ".gitattributes".source = ~/dotfiles/gitattributes;
+    ".config/git/ignore".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/gitignore;
+    ".gitconfig".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/gitconfig;
+    ".gitattributes".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/gitattributes;
 
     ".sbclrc".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/sbclrc;
 
