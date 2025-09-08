@@ -40,6 +40,8 @@ abbr --add gct 'git checkout -t'
 abbr --add gg  'git status'
 abbr --add gba 'git branch -a'
 
+abbr --add udev-reload 'sudo udevadm control --reload-rules && sudo udevadm trigger'
+
 abbr --add sai 'sudo apt install'
 abbr --add sar 'sudo apt remove'
 abbr --add sau 'sudo apt update && sudo apt upgrade'
