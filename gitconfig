@@ -6,6 +6,7 @@ helper = store
 [core]
 fsmonitor = true
 untrackedCache = true
+	fileMode = false
 editor = vim
 excludesfile = ~/.config/git/ignore
 [rebase]
