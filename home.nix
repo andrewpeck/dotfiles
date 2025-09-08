@@ -18,6 +18,7 @@
     pkgs.xautolock
     pkgs.flameshot
     pkgs.rofi
+    pkgs.imgcat
     pkgs.neovim
     #fennel
     pkgs.lua5_4
