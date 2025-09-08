@@ -48,6 +48,8 @@ abbr --add gl 'git log --reverse'
 abbr --add jpl 'uv run --with jupyter jupyter lab'
 abbr --add pipq 'pip install -e . --no-deps --no-build-isolation'
 
+abbr --add bgd 'bg && disown'
+
 # https://github.com/akermu/emacs-libvterm
 if test "$INSIDE_EMACS" = "vterm" \
     -a -n "$EMACS_VTERM_PATH" \
