@@ -24,7 +24,23 @@ set $term wezterm
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:"Hack Nerd Font" 13
+font pango:Consolas, Hack Nerd Font, Deja Vu Sans Mono 13
+
+bar {
+    # tray_output       primary
+    status_command i3status --config ~/.config/i3status/i3status.conf
+    # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+
+    colors {
+        background #000000
+        statusline #ffffff
+
+        focused_workspace  #ffffff #285577
+        active_workspace   #ffffff #333333
+        inactive_workspace #888888 #222222
+        urgent_workspace   #ffffff #900000
+    }
+}
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #4c7899 #282828 #ffffff #2e9ef4   #285577
@@ -217,7 +233,6 @@ bindsym $mod+r mode "resize"
 set $sleep "convert -resize $(xdpyinfo | grep dimensions | cut -d\  -f7 | cut -dx -f1) ~/logo.png ~/logo-resize.png && i3lock -i ~/logo-resize.png && xset dpms force off"
 
 # startup programs
-exec --no-startup-id "xfce4-panel --disable-wm-check"
 exec --no-startup-id "autorandr --change"
 exec --no-startup-id "slack"
 exec --no-startup-id "gpclient launch-gui"
