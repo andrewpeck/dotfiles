@@ -245,8 +245,8 @@ exec --no-startup-id "emacs --daemon"
 exec --no-startup-id "/bin/bash -c 'ln -s -f \"$XAUTHORITY\" ~/.Xauthority'"
 exec --no-startup-id "xhost + local:"
 exec --no-startup-id xss-lock --transfer-sleep-lock -- $sleep
-exec --no-startup-id "xset s on"
-exec --no-startup-id "xset s 1800"
+exec --no-startup-id "xset s on" # turn on screensaver
+exec --no-startup-id "xset s 3600" # set screensaver time
 exec --no-startup-id "solaar --window hide"
 exec --no-startup-id "emacs --daemon=calc"
 
