@@ -261,9 +261,8 @@ bindsym Print exec --no-startup-id flameshot gui
 # bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
 # window rules
-for_window [class="Slack"] move to workspace 10
-for_window [title="Signal"] move to workspace 10
-for_window [class="zoom"] floating enable
-for_window [class="zoom"] sticky enable
-for_window [title="^Calc Popup$"] floating enable
-for_window [title="^Calc Popup$"] sticky enable
+for_window [class="^Slack$"] move to workspace 10
+for_window [title="^Signal$"] move to workspace 10
+for_window [class="^zoom$"] floating enable
+for_window [class="^zoom$"] sticky enable
+for_window [title="^Calc Popup.*$"] floating enable
