@@ -231,7 +231,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-set $sleep "convert -resize $(xdpyinfo | grep dimensions | cut -d\  -f7 | cut -dx -f1) ~/logo.png ~/logo-resize.png && i3lock -i ~/logo-resize.png && xset dpms force off"
+set $sleep "convert -resize x$(xdpyinfo | grep dimensions | cut -d\  -f7 | cut -dx -f2)  -gravity center -crop $(xdpyinfo | grep dimensions | cut -d\  -f7)+0+0 ~/logo.png ~/logo-resize.png && i3lock -i ~/logo-resize.png && xset dpms force off"
 
 # startup programs
 exec --no-startup-id "autorandr --change"
