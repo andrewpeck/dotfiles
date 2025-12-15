@@ -9,6 +9,8 @@
   (set config.initial_cols 120)
   (set config.initial_rows 28)
 
+  (set config.scrollback_lines 500000)
+
   (set config.use_fancy_tab_bar true)
   (set config.keys
        [{:key "("
