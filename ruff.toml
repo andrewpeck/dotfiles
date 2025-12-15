@@ -55,5 +55,5 @@ indent-style = "space"
 skip-magic-trailing-comma = false
 line-ending = "auto"
 
-[isort]
+[lint.isort]
 force-single-line = true
