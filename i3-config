@@ -94,7 +94,7 @@ tiling_drag titlebar
 bindsym $mod+Return exec $term
 bindsym $mod+$ctrl+t exec org-capture
 bindsym $mod+$ctrl+f exec pcmanfm
-bindsym $mod+$ctrl+e exec "emacsclient -nc -a emacs"
+bindsym $mod+$ctrl+e exec "emacsclient -nc -s emacs"
 bindsym $mod+$ctrl+c exec "emacsclient -nc -s calc --eval \\"(calc-popup)\\""
 
 bindsym $mod+x exec "autorandr --change"
@@ -103,7 +103,7 @@ bindsym $mod+x exec "autorandr --change"
 bindsym $mod+p exec arandr
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+$shift+q kill
 bindsym $mod+$ctrl+q kill
 bindsym $alt+F4 kill
 
@@ -123,10 +123,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+$ctrl+j move left
-bindsym $mod+$ctrl+k move down
-bindsym $mod+$ctrl+l move up
-bindsym $mod+$ctrl+semicolon move right
+# bindsym $mod+$ctrl+j move left
+# bindsym $mod+$ctrl+k move down
+# bindsym $mod+$ctrl+l move up
+# bindsym $mod+$ctrl+semicolon move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+$ctrl+Left move left
@@ -135,10 +135,9 @@ bindsym $mod+$ctrl+Up move up
 bindsym $mod+$ctrl+Right move right
 
 # split in horizontal orientation
-bindsym $mod+Shift+h split h
-
+bindsym $mod+$ctrl+h split h
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+$ctrl+j split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -150,6 +149,7 @@ bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+$ctrl+space floating toggle
+bindsym $mod+$ctrl+Return sticky toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -241,19 +241,21 @@ exec --no-startup-id "flatpak run org-signal.Signal"
 exec --no-startup-id "picom -b"
 exec --no-startup-id "parcellite &"
 exec --no-startup-id "flameshot &"
-exec --no-startup-id "emacs --daemon"
 exec --no-startup-id "/bin/bash -c 'ln -s -f \"$XAUTHORITY\" ~/.Xauthority'"
+exec --no-startup-id /usr/bin/lxpolkit
 exec --no-startup-id "xhost + local:"
 exec --no-startup-id xss-lock --transfer-sleep-lock -- $sleep
 exec --no-startup-id "xset s on" # turn on screensaver
 exec --no-startup-id "xset s 3600" # set screensaver time
 exec --no-startup-id "solaar --window hide"
-exec --no-startup-id "emacs --daemon=calc"
+# exec --no-startup-id "emacs --daemon=emacs"
+# exec --no-startup-id "emacs --daemon=calc"
 
 # keybinding to lock screen
 # and auto lock the screen
 bindsym $ctrl+$alt+l exec $sleep
 bindsym $ctrl+$alt+k exec --no-startup-id xkill
+bindsym $ctrl+$alt+e exec --no-startup-id pgrep -x emacs | xargs kill -SIGUSR2
 
 bindsym Print exec --no-startup-id flameshot gui
 # bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
@@ -262,8 +264,10 @@ bindsym Print exec --no-startup-id flameshot gui
 
 # window rules
 for_window [class="^Slack$"] move to workspace 10
+for_window [class="^Signal$"] move to workspace 10
 for_window [title="^Signal$"] move to workspace 10
 for_window [class="^zoom$"] floating enable
+for_window [class="^win0"] floating enable
 for_window [class="^zoom$"] sticky enable
 for_window [title="^Calc Popup.*$"] floating enable
 for_window [title="doom-capture"] floating enable
