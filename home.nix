@@ -11,12 +11,15 @@
 
   # Packages
   home.packages = [
+    pkgs.pass
     pkgs.wordnet
+    pkgs.tesseract4
     pkgs.dmenu
-    pkgs.xss-lock
-    pkgs.parcellite
+    #pkgs.xss-lock
+    # pkgs.parcellite
     pkgs.xautolock
     pkgs.flameshot
+    # pkgs.alttab
     pkgs.rofi
     pkgs.imgcat
     pkgs.neovim
@@ -28,7 +31,7 @@
     pkgs.nix-search-cli
     pkgs.nixfmt-classic
     pkgs.nil
-    pkgs.xclip # org download
+    # pkgs.xclip # org download
     pkgs.xorg.xwininfo # emacs everywhere
     pkgs.xdotool # emacs everywhere
     #utils
@@ -44,7 +47,8 @@
     pkgs.fzf
     pkgs.rare-regex
     pkgs.isync
-    pkgs.youplot
+    # Source locally installed gems is ignoring #<Bundler::StubSpecification name=rbs version=3.4.0 platform=ruby> because it is missing extensions
+    # pkgs.youplot
     pkgs.jq
     pkgs.yq
     pkgs.lesspipe
@@ -61,6 +65,7 @@
     pkgs.pandoc
     # https://mynixos.com/nixpkgs/packages/nerd-fonts
     pkgs.nerd-fonts.fira-code
+    pkgs.nerd-fonts.adwaita-mono
     pkgs.nerd-fonts.hack
     pkgs.nerd-fonts._3270
     pkgs.nerd-fonts.inconsolata-go
@@ -72,7 +77,7 @@
     pkgs.nagelfar
     #c/c++
     pkgs.bear
-    pkgs.ccls
+    #pkgs.ccls
     #clojure
     pkgs.babashka
     pkgs.clj-kondo
@@ -88,6 +93,7 @@
     pkgs.ruff
     pkgs.python312Packages.autopep8
     pkgs.isort
+    pkgs.cloc
     # hdl
     pkgs.gtkwave
     # tex
@@ -102,6 +108,7 @@
 
     ".config/picom/picom.conf".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/picom.conf;
     ".config/i3/config".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/i3-config;
+    ".config/i3status/i3status.conf".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/i3-status;
     ".config/sway/config".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/i3-config;
     ".config/rofi/config.rasi".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/rofi-config.rasi;
 
@@ -142,7 +149,7 @@
     #mutt
     ".mailcap".source = ~/dotfiles/mailcap;
     ".mutt".source = ~/dotfiles/mutt;
-    ".mbsyncrc".source = ~/dotfiles/mbsyncrc;
+    ".mbsyncrc".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/mbsyncrc;
 
     #python
     ".config/pycodestyle".source = ~/dotfiles/pycodestyle;
