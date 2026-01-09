@@ -1,0 +1,52 @@
+#!/usr/bin/env fish
+
+set filename $argv[1]
+set wav "/tmp/output.wav"
+set summary (path change-extension "" $filename)"-summary.txt"
+set transcript (path change-extension "" $filename)"-transcript.txt"
+
+ffmpeg -y -i $filename -ar 16000 -ac 1 -c:a pcm_s16le $wav
+
+voxtype transcribe $wav | awk '/Transcription completed/{p=1; getline; next} p' | tee $transcript
+
+if test -z "$OPENAI_API_KEY"
+    echo "Error: OPENAI_API_KEY not set" >&2
+    exit 0
+end
+
+# Read stdin into a single string (preserve newlines)
+set -l INPUT (cat $transcript)
+
+# Empty input = empty output
+if test -z "$INPUT"
+    exit 0
+end
+
+# Build JSON payload
+set -l JSON (jq -n --arg text "$INPUT" '{
+  model: "gpt-5",
+  messages: [
+    { role: "system", content: "Please create a concise summary from following transcribed text of a meeting. No more than 500 words please." },
+    { role: "user",   content: $text }
+  ]
+}' | string collect)
+
+# Call OpenAI API
+set -l RESPONSE (curl -s \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer $OPENAI_API_KEY" \
+    -d "$JSON" \
+    https://api.openai.com/v1/chat/completions | string collect)
+
+# Extract the response text
+set -l OUTPUT (echo "$RESPONSE" | jq -r '.choices[0].message.content // empty' | string collect)
+
+printf "%b" $OUTPUT
+
+if test -n "$OUTPUT"
+    printf "%b\n" $OUTPUT
+    printf "%b\n" > $summary
+else
+    echo "No summary output" >&2
+    exit 0
+end
