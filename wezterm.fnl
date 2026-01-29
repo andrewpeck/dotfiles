@@ -3,7 +3,8 @@
 (let [wezterm (require :wezterm)
       config (wezterm.config_builder)]
 
-  (set config.font_size (if (= "larry" (wezterm.hostname)) 10 15))
+  (set config.font_size 15)
+  (set config.font (wezterm.font "AdwaitaMono Nerd Font"))
   (set config.color_scheme "Gruvbox Dark (Gogh)")
 
   (set config.initial_cols 120)

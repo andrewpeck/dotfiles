@@ -1,10 +1,7 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
-if ("larry" == wezterm.hostname()) then
-  config.font_size = 10
-else
-  config.font_size = 15
-end
+config.font_size = 15
+config.font = wezterm.font("AdwaitaMono Nerd Font")
 config.color_scheme = "Gruvbox Dark (Gogh)"
 config.initial_cols = 120
 config.initial_rows = 28
