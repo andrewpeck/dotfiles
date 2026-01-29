@@ -126,6 +126,7 @@
     ".vim/colors".source = ~/dotfiles/vim/vim/colors;
 
     # tools
+    ".config/voxtype/config.toml".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/voxtype.toml;
     ".config/rassumfrassum".source = config.lib.file.mkOutOfStoreSymlink ~/dotfiles/rassumfrassum;
     ".tclsyntaxdb".source = ~/dotfiles/syntaxdb86.tcl;
     ".aspell.en.pws".source = ~/dotfiles/aspell.en.pws;
