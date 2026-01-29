@@ -11,6 +11,7 @@
 
   # Packages
   home.packages = [
+    pkgs.verible
     pkgs.pass
     pkgs.wordnet
     pkgs.tesseract4
