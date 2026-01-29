@@ -14,6 +14,7 @@
     pkgs.verible
     pkgs.pass
     pkgs.wordnet
+    pkgs.alttab
     pkgs.tesseract4
     pkgs.dmenu
     #pkgs.xss-lock
