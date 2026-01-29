@@ -1,9 +1,9 @@
 #!/usr/bin/env fish
 
-set filename $argv[1]
-set wav "/tmp/output.wav"
-set summary (path change-extension "" $filename)"-summary.txt"
-set transcript (path change-extension "" $filename)"-transcript.txt"
+set -l filename $argv[1]
+set -l wav "/tmp/output.wav"
+set -l summary (path change-extension "" $filename)"-summary.txt"
+set -l transcript (path change-extension "" $filename)"-transcript.txt"
 
 ffmpeg -y -i $filename -ar 16000 -ac 1 -c:a pcm_s16le $wav
 
@@ -26,7 +26,7 @@ end
 set -l JSON (jq -n --arg text "$INPUT" '{
   model: "gpt-5",
   messages: [
-    { role: "system", content: "Please create a concise summary from following transcribed text of a meeting. No more than 500 words please." },
+    { role: "system", content: "Please create a concise summary from following transcribed text of a meeting. No more than 500 words please."},
     { role: "user",   content: $text }
   ]
 }' | string collect)
@@ -44,8 +44,7 @@ set -l OUTPUT (echo "$RESPONSE" | jq -r '.choices[0].message.content // empty' |
 printf "%b" $OUTPUT
 
 if test -n "$OUTPUT"
-    printf "%b\n" $OUTPUT
-    printf "%b\n" > $summary
+    printf "%b\n" | tee $summary
 else
     echo "No summary output" >&2
     exit 0
